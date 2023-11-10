@@ -24,6 +24,11 @@ public class User {
   private String password;
   @Column(nullable = false)
   private String email;
+  @OneToMany(
+    cascade = CascadeType.ALL
+  )
+  @JoinColumn(name = "userId")
+  private java.util.List<List> lists;
 
   public User(String username, String password, String email) {
     this.username = username;

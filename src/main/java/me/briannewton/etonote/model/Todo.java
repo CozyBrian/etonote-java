@@ -6,66 +6,28 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "todos")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Todo {
   @Id
   @GeneratedValue
   private UUID id;
   private String title;
   private Boolean isDone;
-  private String listId;
+  private UUID listId;
   private String note;
 
-  public Todo() {
-  }
-
-  public Todo(UUID id, String title, Boolean isDone, String listId, String note) {
-    this.id = id;
+  public Todo(String title, Boolean isDone, UUID listId, String note) {
     this.title = title;
     this.isDone = isDone;
     this.listId = listId;
     this.note = note;
   }
-
-  public Todo(String title, Boolean isDone, String listId, String note) {
-    this.title = title;
-    this.isDone = isDone;
-    this.listId = listId;
-    this.note = note;
-  }
-
-  public UUID getId() {
-    return id;
-  }
-  public void setId(UUID id) {
-    this.id = id;
-  }
-  public String getTitle() {
-    return title;
-  }
-  public void setTitle(String title) {
-    this.title = title;
-  }
-  public Boolean getIsDone() {
-    return isDone;
-  }
-  public void setIsDone(Boolean isDone) {
-    this.isDone = isDone;
-  }
-  public String getListId() {
-    return listId;
-  }
-  public void setListId(String listId) {
-    this.listId = listId;
-  }
-  public String getNote() {
-    return note;
-  }
-  public void setNote(String note) {
-    this.note = note;
-  }
-
-  
 }
