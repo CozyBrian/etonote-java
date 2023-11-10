@@ -1,7 +1,6 @@
 package me.briannewton.etonote.controller;
 
 import java.util.List;
-import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -21,7 +20,7 @@ public class TodoController {
   }
 
   @GetMapping
-  public List<Todo> getTodosByListId(@RequestParam("listId") UUID listId) {
+  public List<Todo> getTodosByListId(@RequestParam("listId") String listId) {
     return todoService.getTodosByListId(listId);
   }
 }

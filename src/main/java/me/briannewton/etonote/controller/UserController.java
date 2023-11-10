@@ -18,7 +18,7 @@ public class UserController {
   }
 
   @GetMapping
-  public User getUserById(@RequestParam("id") java.util.UUID id) {
+  public User getUserById(@RequestParam("id") String id) {
     return userService.getUserById(id);
   }
   

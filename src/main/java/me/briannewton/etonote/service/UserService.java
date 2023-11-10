@@ -19,7 +19,7 @@ public class UserService {
     return userRepository.save(user);
   }
 
-  public User getUserById(java.util.UUID id) {
+  public User getUserById(String id) {
     return userRepository.findById(id).orElse(null);
   }
 

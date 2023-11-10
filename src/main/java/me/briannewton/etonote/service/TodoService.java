@@ -1,7 +1,5 @@
 package me.briannewton.etonote.service;
 
-import java.util.UUID;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +15,7 @@ public class TodoService {
     this.todoRepository = todoRepository;
   }
 
-  public java.util.List<Todo> getTodosByListId(UUID listId) {
+  public java.util.List<Todo> getTodosByListId(String listId) {
     return todoRepository.findByListId(listId);
   }
 }

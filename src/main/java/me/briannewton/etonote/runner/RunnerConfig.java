@@ -17,7 +17,7 @@ public class RunnerConfig {
   CommandLineRunner commandLineRunner(UserRepository userRepository, ListRepository listRepository, TodoRepository todoRepository) {
     return args -> {
       User brian = new User(
-        UUID.randomUUID(), 
+        UUID.randomUUID().toString(), 
         "cozy", 
         "cozy1234", 
         "cozy@brian.com"
@@ -26,17 +26,17 @@ public class RunnerConfig {
       userRepository.save(brian);
       
       List etonote = new List(
-        UUID.randomUUID(), 
+        UUID.randomUUID().toString(), 
         brian.getId(), 
         "etonote", 
-        new Icon("color", "#26ff69")
+        new Icon(IconType.COLOR, "#26ff69")
       );
 
       List home = new List(
-        UUID.randomUUID(), 
+        UUID.randomUUID().toString(), 
         brian.getId(), 
         "Home", 
-        new Icon("color", "#CFDEE7")
+        new Icon(IconType.COLOR, "#CFDEE7")
       );
 
       listRepository.saveAll(
