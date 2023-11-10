@@ -33,6 +33,13 @@ public class List {
     this.icon = new Icon(iconType, iconData);
   }
   
+  public List(UUID id, UUID userId, String title, Icon icon) {
+    this.id = id;
+    this.title = title;
+    this.userId = userId;
+    this.icon = icon;
+  }
+  
   public List(UUID userId, String title, String iconType, String iconData) {
     this.title = title;
     this.userId = userId;

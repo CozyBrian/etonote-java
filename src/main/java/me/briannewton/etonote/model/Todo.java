@@ -24,6 +24,13 @@ public class Todo {
   private UUID listId;
   private String note;
 
+  public Todo(UUID listId, String title, String note) {
+    this.title = title;
+    this.listId = listId;
+    this.note = note;
+    this.isDone = false;
+  }
+
   public Todo(String title, Boolean isDone, UUID listId, String note) {
     this.title = title;
     this.isDone = isDone;

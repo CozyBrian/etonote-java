@@ -30,6 +30,13 @@ public class User {
   @JoinColumn(name = "userId")
   private java.util.List<List> lists;
 
+  public User(UUID id, String username, String password, String email) {
+    this.id = id;
+    this.username = username;
+    this.password = password;
+    this.email = email;
+  }
+
   public User(String username, String password, String email) {
     this.username = username;
     this.password = password;
