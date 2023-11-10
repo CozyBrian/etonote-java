@@ -1,7 +1,10 @@
-package me.briannewton.etonote.list;
+package me.briannewton.etonote.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import me.briannewton.etonote.model.List;
+import me.briannewton.etonote.service.ListService;
 
 @RestController
 @RequestMapping(path = "api/v1/lists")

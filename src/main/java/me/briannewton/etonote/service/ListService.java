@@ -1,7 +1,10 @@
-package me.briannewton.etonote.list;
+package me.briannewton.etonote.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import me.briannewton.etonote.model.List;
+import me.briannewton.etonote.repository.ListRepository;
 
 @Service
 public class ListService {

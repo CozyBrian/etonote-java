@@ -1,4 +1,4 @@
-package me.briannewton.etonote.todo;
+package me.briannewton.etonote.model;
 
 import java.util.UUID;
 
