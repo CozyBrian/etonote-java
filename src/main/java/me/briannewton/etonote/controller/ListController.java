@@ -19,8 +19,9 @@ public class ListController {
   }
   
   @GetMapping
-  public java.util.List<List> getListsByUserId(@RequestParam String userId) {
-    return listService.getUserLists(userId);
+  public ResponseEntity<java.util.List<List>> getListsByUserId(@RequestParam String userId) {
+    java.util.List<List> userLists = listService.getUserLists(userId);
+    return ResponseEntity.ok(userLists);
   }
 
   @GetMapping(path = "{listId}")
@@ -31,8 +32,9 @@ public class ListController {
   }
 
   @PostMapping
-  public List addList(@RequestBody List list) {
-    return listService.addList(list);
+  public ResponseEntity<List> addList(@RequestBody List list) {
+    List newList = listService.addList(list);
+    return ResponseEntity.status(201).body(newList);
   }
   
 }

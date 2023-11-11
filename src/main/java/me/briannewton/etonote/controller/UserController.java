@@ -1,6 +1,7 @@
 package me.briannewton.etonote.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import me.briannewton.etonote.model.User;
@@ -18,8 +19,9 @@ public class UserController {
   }
 
   @GetMapping
-  public User getUserById(@RequestParam("id") String id) {
-    return userService.getUserById(id);
+  public ResponseEntity<User> getUserById(@RequestParam("id") String id) {
+    User user = userService.getUserById(id);
+    return ResponseEntity.ok(user);
   }
   
 }
