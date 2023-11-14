@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import me.briannewton.etonote.model.List;
+import me.briannewton.etonote.model.DTOs.ListDTO;
 import me.briannewton.etonote.service.ListService;
 
 @RestController
@@ -19,9 +20,15 @@ public class ListController {
   }
   
   @GetMapping
-  public ResponseEntity<java.util.List<List>> getListsByUserId(@RequestParam String userId) {
-    java.util.List<List> userLists = listService.getUserLists(userId);
+  public ResponseEntity<java.util.List<ListDTO>> getListsByUserId(@RequestParam String userId) {
+    java.util.List<ListDTO> userLists = listService.getUserLists(userId);
     return ResponseEntity.ok(userLists);
+  }
+
+  @GetMapping(path = "all")
+  public ResponseEntity<java.util.List<ListDTO>> getAllLists() {
+    java.util.List<ListDTO> allLists = listService.getAllLists();
+    return ResponseEntity.ok(allLists);
   }
 
   @GetMapping(path = "{listId}")

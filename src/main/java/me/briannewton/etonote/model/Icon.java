@@ -22,4 +22,9 @@ public class Icon {
   @Enumerated(EnumType.STRING)
   private IconType type;
   private String data;
+
+  public Icon(String type, String data) {
+    this.type = IconType.valueOf(type);
+    this.data = data;
+  }
 }
