@@ -25,7 +25,7 @@ public class ListController {
     return ResponseEntity.ok(userLists);
   }
 
-  @GetMapping(path = "all")
+  @GetMapping(path = "/")
   public ResponseEntity<java.util.List<ListDTO>> getAllLists() {
     java.util.List<ListDTO> allLists = listService.getAllLists();
     return ResponseEntity.ok(allLists);

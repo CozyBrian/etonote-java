@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Bean;
 public class EtonoteApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(EtonoteApplication.class, args);
+	 	SpringApplication.run(EtonoteApplication.class, args);
 	}
 
 	@Bean
